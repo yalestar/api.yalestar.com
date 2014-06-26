@@ -1,0 +1,15 @@
+https://github.com/behrendtio/jbuilder
+
+Build API for serving various bullshit, starting with Melt-Banana song names
+Accept request param 'type' 
+Return JSON containing the song name
+Currently:
+NodeJS/Express
+PostgreSQL (maybe not; just put the shit in a text file?)
+Need api.yalestar.com subdomain
+
+=================================================================
+scrape minutemen lyrics from http://lyrics.wikia.com/Minutemen
+http://htmlentities.rubyforge.org/
+http://nokogiri.org/Nokogiri/XML/NodeSet.html
+http://stackoverflow.com/questions/1600526/how-do-i-encode-decode-html-entities-in-ruby
