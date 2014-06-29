@@ -1,9 +1,11 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , melt_banana = require('./routes/melt_banana')
   , http = require('http')
   , path = require('path');
 
+var db = require('./config/db');
 var app = express();
 
 app.configure(function(){
@@ -24,7 +26,7 @@ app.configure('development', function(){
 
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/v1/mb', melt_banana.index);
 app.get('/quote/random', user.randomQuote);
 
 http.createServer(app).listen(app.get('port'), function(){

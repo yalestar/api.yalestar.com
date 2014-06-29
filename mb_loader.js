@@ -18,7 +18,6 @@ client.connect(function(err) {
   });
 
   rd.on('line', function(line) {
-      console.log(line);
       var sql = "insert into melt_bananas(title, created_at, updated_at)";
       sql += "values('" + line + "', now(), now());"
       console.log(sql);
