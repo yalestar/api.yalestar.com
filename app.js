@@ -2,10 +2,12 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , melt_banana = require('./routes/melt_banana')
+  , mongoose = require('mongoose')
   , http = require('http')
   , path = require('path');
 
 var db = require('./config/db');
+var fs = require('fs');
 var app = express();
 
 app.configure(function(){
@@ -24,7 +26,13 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Load models
+var modelsPath = path.join(__dirname, 'models');
+fs.readdirSync(modelsPath).forEach(function (file) {
+  require(modelsPath + '/' + file);
+});
 
+// Routes
 app.get('/', routes.index);
 app.get('/v1/mb', melt_banana.index);
 app.get('/quote/random', user.randomQuote);
