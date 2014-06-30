@@ -1,6 +1,4 @@
 var mongoose = require('mongoose');
-var random = require('mongoose-random');
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/yalestar_api');
 
 var Schema = mongoose.Schema({
   title: { type: String },
@@ -16,15 +14,12 @@ Schema.statics.random = function(callback) {
   }.bind(this));
 };
 
-
 var MeltBanana = mongoose.model('MeltBanana', Schema, 'melt_bananas' );
 
 exports.index = function(req, res) {
   var rt = null;
   MeltBanana.random(function (err, data) {
-    console.log("-------------" + data.title);
     rt = data.title;
+    res.send({ title: rt });
   });
-  console.log(rt);
-  res.send({ title: rt });
 };

@@ -1,28 +1,28 @@
-// 'use strict';
-// var mongoose = require('mongoose');
+'use strict';
+var mongoose = require('mongoose');
 
-// var config = {
-//   "db": "yalestar_api",
-//   "host": "localhost",
-//   "user": "",
-//   "pw": "",
-//   "port": 27017
-// };
+var config = {
+  "db": "yalestar_api",
+  "host": "localhost",
+  "user": "",
+  "pw": "",
+  "port": 27017
+};
 
-// var port = (config.port.length > 0) ? ":" + config.port : '';
-// var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
-// //var uriString =  process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||  "mongodb://" + login + config.host + port + "/" + config.db;
-// var uriString = "mongodb://" + config.host + port + "/" + config.db;
+var port = (config.port.length > 0) ? ":" + config.port : '';
+var login = (config.user.length > 0) ? config.user + ":" + config.pw + "@" : '';
+//var uriString =  process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||  "mongodb://" + login + config.host + port + "/" + config.db;
+var uriString = "mongodb://" + config.host + port + "/" + config.db;
 
-// var mongoOptions = { db: { safe: true } };
+var mongoOptions = { db: { safe: true } };
 
-// mongoose.connect(uriString, mongoOptions, function (err, res) {
-//   if (err) {
-//     console.log('ERROR connecting to: ' + uriString + '. ' + err);
-//   } else {
-//     console.log('connected to: ' + uriString);
-//   }
-// });
+mongoose.connect(uriString, mongoOptions, function (err, res) {
+  if (err) {
+    console.log('ERROR connecting to: ' + uriString + '. ' + err);
+  } else {
+    console.log('connected to: ' + uriString);
+  }
+});
 
 
-// exports.mongoose = mongoose;
+exports.mongoose = mongoose;

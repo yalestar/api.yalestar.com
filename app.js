@@ -2,6 +2,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , melt_banana = require('./routes/melt_banana')
+  , subdivision = require('./routes/subdivision')
   , mongoose = require('mongoose')
   , http = require('http')
   , path = require('path');
@@ -35,6 +36,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 // Routes
 app.get('/', routes.index);
 app.get('/v1/mb', melt_banana.index);
+app.get('/v1/subd', subdivision.index);
 app.get('/quote/random', user.randomQuote);
 
 http.createServer(app).listen(app.get('port'), function(){
