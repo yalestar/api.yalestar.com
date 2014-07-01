@@ -1,8 +1,9 @@
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , melt_banana = require('./routes/melt_banana')
   , subdivision = require('./routes/subdivision')
+  , minutemen = require('./routes/minutemen')
+  , fakery = require('./routes/fakery')
   , mongoose = require('mongoose')
   , http = require('http')
   , path = require('path');
@@ -37,7 +38,11 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 app.get('/', routes.index);
 app.get('/v1/mb', melt_banana.index);
 app.get('/v1/subd', subdivision.index);
-app.get('/quote/random', user.randomQuote);
+app.get('/v1/minutemen/title', minutemen.title);
+app.get('/v1/minutemen/lyrics', minutemen.lyrics);
+app.get('/v1/fakery/cp', fakery.cp);
+app.get('/v1/fakery/bs', fakery.bs);
+app.get('/v1/fakery/name', fakery.name);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
