@@ -28,11 +28,6 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-// Load models
-var modelsPath = path.join(__dirname, 'models');
-fs.readdirSync(modelsPath).forEach(function (file) {
-  require(modelsPath + '/' + file);
-});
 
 // Routes
 app.get('/', routes.index);
