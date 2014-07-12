@@ -3,6 +3,7 @@ var express = require('express')
   , melt_banana = require('./routes/melt_banana')
   , subdivision = require('./routes/subdivision')
   , minutemen = require('./routes/minutemen')
+  , don_caballero = require('./routes/don_caballero')
   , fakery = require('./routes/fakery')
   , mongoose = require('mongoose')
   , http = require('http')
@@ -32,6 +33,7 @@ app.configure('development', function(){
 // Routes
 app.get('/', routes.index);
 app.get('/v1/mb', melt_banana.index);
+app.get('/v1/doncab', don_caballero.index);
 app.get('/v1/subd', subdivision.index);
 app.get('/v1/minutemen/title', minutemen.title);
 app.get('/v1/minutemen/lyrics', minutemen.lyrics);
