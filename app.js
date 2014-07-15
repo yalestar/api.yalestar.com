@@ -1,13 +1,15 @@
-var express = require('express')
-  , routes = require('./routes')
-  , melt_banana = require('./routes/melt_banana')
-  , subdivision = require('./routes/subdivision')
-  , minutemen = require('./routes/minutemen')
-  , don_caballero = require('./routes/don_caballero')
-  , fakery = require('./routes/fakery')
-  , mongoose = require('mongoose')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'),
+  routes = require('./routes'),
+  melt_banana = require('./routes/melt_banana'),
+  subdivision = require('./routes/subdivision'),
+  minutemen = require('./routes/minutemen'),
+  pokes = require('./routes/pokes'),
+  chillax = require('./routes/chillax'),
+  don_caballero = require('./routes/don_caballero'),
+  fakery = require('./routes/fakery'),
+  mongoose = require('mongoose'),
+  http = require('http'),
+  path = require('path');
 
 var db = require('./config/db');
 var fs = require('fs');
@@ -35,6 +37,8 @@ app.get('/', routes.index);
 app.get('/v1/mb', melt_banana.index);
 app.get('/v1/doncab', don_caballero.index);
 app.get('/v1/subd', subdivision.index);
+app.get('/v1/pokes', pokes.index);
+app.get('/v1/chillax', chillax.index);
 app.get('/v1/minutemen/title', minutemen.title);
 app.get('/v1/minutemen/lyrics', minutemen.lyrics);
 app.get('/v1/fakery/cp', fakery.cp);
