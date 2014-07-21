@@ -1,8 +1,5 @@
 https://github.com/behrendtio/jbuilder
 
-Build API for serving various bullshit, starting with Melt-Banana song names
-Accept request param 'type' 
-Return JSON containing the song name
 Currently:
 NodeJS/Express
 PostgreSQL (maybe not; just put the shit in a text file?)

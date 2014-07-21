@@ -7,9 +7,13 @@
   },
   "dependencies": {
     "express": "~3.3.4",
+    "faker": "latest",
     "jade": "~0.34.0",
     "mongoose": "latest",
-    "faker": "latest"
+    "passport": "^0.2.0",
+    "passport-local": "latest",
+    "passport-local-mongoose": "^0.3.0",
+    "connect-flash": "latest"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
