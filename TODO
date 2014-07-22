@@ -1,12 +1,5 @@
-https://github.com/behrendtio/jbuilder
+Artist Statement Generators:
+  http://www.artybollocks.com/#abg_short
 
-Currently:
-NodeJS/Express
-PostgreSQL (maybe not; just put the shit in a text file?)
-Need api.yalestar.com subdomain
-
-=================================================================
-scrape minutemen lyrics from http://lyrics.wikia.com/Minutemen
-http://htmlentities.rubyforge.org/
-http://nokogiri.org/Nokogiri/XML/NodeSet.html
-http://stackoverflow.com/questions/1600526/how-do-i-encode-decode-html-entities-in-ruby
+subdivision generator randomizer needs some promise/callback help
+(i.e. selecting randomly from two fields)
