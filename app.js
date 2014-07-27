@@ -11,12 +11,10 @@ var express = require('express'),
     fakery = require('./routes/fakery'),
     mongoose = require('mongoose'),
     http = require('http'),
-    passport = require('passport'),
     path = require('path');
 
 var flash = require('connect-flash');
 
-var LocalStrategy = require('passport-local').Strategy;
 var db = require('./config/db');
 var fs = require('fs');
 var app = express();
@@ -32,8 +30,8 @@ app.configure(function () {
   app.use(express.cookieParser('refractory'));
   app.use(express.session({ key: 'sid', cookie: { maxAge: 60000 }}));
   app.use(flash());
-  app.use(passport.initialize());
-  app.use(passport.session());
+  // app.use(passport.initialize());
+  // app.use(passport.session());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -68,12 +66,6 @@ app.get('/', function (req, res) {
   );
 });
 
-
-// passport config
-var User = require('./models/user');
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 http.createServer(app).listen(app.get('port'), function () {
   console.log("Server listening on port " + app.get('port'));
