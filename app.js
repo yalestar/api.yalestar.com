@@ -7,6 +7,7 @@ var express = require('express'),
     fantasia = require('./routes/fantasia'),
     rv = require('./routes/rv'),
     chillax = require('./routes/chillax'),
+    noty = require('./routes/noty'),
     don_caballero = require('./routes/don_caballero'),
     fakery = require('./routes/fakery'),
     mongoose = require('mongoose'),
@@ -30,8 +31,6 @@ app.configure(function () {
   app.use(express.cookieParser('refractory'));
   app.use(express.session({ key: 'sid', cookie: { maxAge: 60000 }}));
   app.use(flash());
-  // app.use(passport.initialize());
-  // app.use(passport.session());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -50,6 +49,7 @@ app.get('/v1/pokes', pokes.index);
 app.get('/v1/fantasia', fantasia.index);
 app.get('/v1/rv', rv.index);
 app.get('/v1/chillax', chillax.index);
+app.get('/v1/noty', noty.index);
 app.get('/v1/minutemen/title', minutemen.title);
 app.get('/v1/minutemen/lyrics', minutemen.lyrics);
 app.get('/v1/fakery/cp', fakery.cp);
