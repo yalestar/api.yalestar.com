@@ -2,6 +2,7 @@ var express = require('express'),
     routes = require('./routes'),
     melt_banana = require('./routes/melt_banana'),
     subdivision = require('./routes/subdivision'),
+    spamname = require('./routes/spamname'),
     minutemen = require('./routes/minutemen'),
     pokes = require('./routes/pokes'),
     fantasia = require('./routes/fantasia'),
@@ -45,6 +46,7 @@ require('./routes')(app);
 app.get('/v1/mb', melt_banana.index);
 app.get('/v1/doncab', don_caballero.index);
 app.get('/v1/subd', subdivision.index);
+app.get('/v1/spamname', spamname.index);
 app.get('/v1/pokes', pokes.index);
 app.get('/v1/fantasia', fantasia.index);
 app.get('/v1/rv', rv.index);
